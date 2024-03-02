@@ -6,9 +6,8 @@ const SubstanceInteractionDetails = ({ interaction }: { interaction: Interaction
   if (!interaction) {
     return false;
   }
-  
-  return (
 
+  return (
     <div>
       <div className="font-bold">{interaction?.substanceName}</div>
       {interaction?.interactionWithSelectedSubstances.status && (

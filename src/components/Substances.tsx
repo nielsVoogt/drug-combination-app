@@ -1,11 +1,7 @@
-// import comboData from '../data/comboData';
-import { get } from 'radash'
-import { useContext } from "react";
-import { Interaction, SubstanceInteractionInfo, SubstanceInteractionName } from '../types';
-import { SubtanceContext } from '../App';
-import SubstanceSelection from './SubstanceSelection';
-import comboData from '../data/comboData';
 import SubstanceInteractions from './SubstanceInteractions';
+import SubstanceSelection from './SubstanceSelection';
+import { SubtanceContext } from '../App';
+import { useContext } from "react";
 
 const Substances = () => {
   const { selectedSubstances } = useContext(SubtanceContext)
