@@ -11,10 +11,12 @@ import {
 } from "@/components/ui/drawer"
 
 import SubstanceList from "./SubstanceList"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { SubtanceContext } from "@/App"
 
 const SelectSubstances = () => {
   const [open, setOpen] = useState(false)
+  const { selectedSubstances } = useContext(SubtanceContext)
 
   const handleOnOpenSubstanceSelect = () => {
     setOpen(true)
@@ -24,7 +26,7 @@ const SelectSubstances = () => {
     <>
       <button onClick={handleOnOpenSubstanceSelect}
       className="fixed p-5 text-white rounded-lg shadow-lg bottom-3 left-3 right-3 bg-[#04294F]">
-        SELECT SUBSTANCES TO START
+        {selectedSubstances.length ? <>{selectedSubstances.length} substances selected</> : 'SELECT SUBSTANCES TO START'}
       </button>
       <Drawer shouldScaleBackground open={open} onOpenChange={setOpen}>
         <DrawerContent>

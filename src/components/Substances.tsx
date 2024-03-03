@@ -6,7 +6,7 @@ import Footer from './Footer';
 import comboData from "../data/comboData"
 import { get } from 'radash';
 import { CombinationInteraction } from '@/types';
-import StatusLabel from './StatusLabel';
+import CombinationInformation from './Combination';
 
 const Substances = () => {
   const { selectedSubstances } = useContext(SubtanceContext)
@@ -24,8 +24,8 @@ const Substances = () => {
         const interaction = get(baseSubstanceInteractions, combinationSubstance)
 
         const combinationInteraction = {
-          baseSubstance,
           combinationSubstance,
+          baseSubstance,
           interaction
         } as CombinationInteraction
 
@@ -42,23 +42,20 @@ const Substances = () => {
   return (
     <>
       <div className='flex flex-col min-h-[100vh]'>
-
-        {/* HEADER */}
         <div className='container py-10 text-center text-white'>
           <img src={brainImgUrl} className='mx-auto mb-8' />
           <h1 className='mb-4 text-2xl'>KNOW YOUR SHIT</h1>
           <p className='text-lg'>Check for possible harmful or dangerous drug combinations and interactions</p>
         </div>
-
         <div className='flex-1 py-10 bg-yellow-400'>
           <div className='container'>
-            {combinations.map((combo, idx) => (
-              <div className='mb-1 bg-white' key={idx}>
-                <h1>{combo.combinationSubstance} + {combo.baseSubstance} <StatusLabel status={combo.interaction.status} /></h1>
-                <p>{combo.interaction.note}</p>
-              </div>
+            {combinations.length ? 
+            combinations.map((combination, idx) => (
+              <CombinationInformation combination={combination} key={idx}/>
             ))
-            }
+            
+            : <div className='h-full border border-white border-dotted'>Empty message here</div>
+          }
           </div>
           <SelectSubstances />
         </div>
