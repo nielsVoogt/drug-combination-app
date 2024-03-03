@@ -7,5 +7,5 @@ export type SubstanceInteractionInfo = {
 
 export type Interaction = {
   substanceName: SubstanceInteractionName
-  interactionWithSelectedSubstances: SubstanceInteractionInfo
+  interaction: SubstanceInteractionInfo
 }

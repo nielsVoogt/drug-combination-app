@@ -14,28 +14,21 @@ const SubstanceInteractions = ({ selectedSubstance }: { selectedSubstance: strin
   const allInteractions: Record<SubstanceInteractionName, SubstanceInteractionInfo> = get(comboData, selectedSubstance)
   let interactions: any | [] = []
 
-  // const [statuses, setStatuses] = useState([])
-
   const [open, setOpen] = useState(true)
 
-  const getAllStatuses = (interactionWithSelectedSubstances:SubstanceInteractionInfo) => {
-    console.log('a', interactionWithSelectedSubstances)
+  const getAllStatuses = (interaction:SubstanceInteractionInfo) => {
+    console.log('a', interaction)
   }
 
   interactions = selectedSubstances.map(substanceName => {
-    const interactionWithSelectedSubstances:SubstanceInteractionInfo = get(allInteractions, substanceName)
-    if (interactionWithSelectedSubstances) {
-      getAllStatuses(interactionWithSelectedSubstances)
-      return { substanceName, interactionWithSelectedSubstances }
+    const interaction:SubstanceInteractionInfo = get(allInteractions, substanceName)
+    if (interaction) {
+      getAllStatuses(interaction)
+      return { substanceName, interaction }
     }
   })
 
   const handleOnToggleClick = () => setOpen(!open)
-
-  console.log('interactions', interactions)
-  // const x = interactions.map((interaction:Interaction) => interaction.interactionWithSelectedSubstances.note)
-
-  // console.log(x)
 
   return (
 

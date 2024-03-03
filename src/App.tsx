@@ -1,4 +1,3 @@
-
 import { createContext, useState } from "react";
 
 import Substances from "./components/Substances";
@@ -8,16 +7,19 @@ const App = () => {
   const [selectedSubstances, setSelectedSubstances] = useState<string[]>([]);
 
   return (
-    <div className="min-h-[100vh] text-sm bg-slate-200">
-      <main className="container">
-        <SubtanceContext.Provider value={{ selectedSubstances, setSelectedSubstances }}>
-          <Substances />
-        </SubtanceContext.Provider>
-      </main>
+    <div className="min-h-[100vh] text-sm overflow-auto">
+      <SubtanceContext.Provider value={{ selectedSubstances, setSelectedSubstances }}>
+        <Substances />
+      </SubtanceContext.Provider>
 
-      <small>
-        The app is meant as a quick reference guide and additional research MUST always be done. For additional information check out the <a href="http://drugs.tripsit.me/">Factsheet</a>.
-      </small>
+      <div className="bg-[#EDF8FF]">
+        <div className="container">
+          <small>
+            The app is meant as a quick reference guide and additional research MUST always be done. For additional information check out the <a href="http://drugs.tripsit.me/">Factsheet</a>.
+          </small>
+
+        </div>
+      </div>
       <div>
         <Toaster richColors />
       </div>

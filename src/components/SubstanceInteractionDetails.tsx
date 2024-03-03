@@ -10,10 +10,10 @@ const SubstanceInteractionDetails = ({ interaction }: { interaction: Interaction
   return (
     <div>
       <div className="font-bold">{interaction?.substanceName}</div>
-      {interaction?.interactionWithSelectedSubstances.status && (
+      {interaction?.interaction.status && (
         <>
-          <StatusLabel status={interaction?.interactionWithSelectedSubstances.status} />
-          {interaction?.interactionWithSelectedSubstances.note && interaction?.interactionWithSelectedSubstances.note}
+          <StatusLabel status={interaction?.interaction.status} />
+          {interaction?.interaction.note && interaction?.interaction.note}
         </>
       )}
     </div>
