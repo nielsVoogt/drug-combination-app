@@ -9,3 +9,9 @@ export type Interaction = {
   substanceName: SubstanceInteractionName
   interaction: SubstanceInteractionInfo
 }
+
+export type CombinationInteraction = {
+  baseSubstance: string
+  combinationSubstance: string
+  interaction: SubstanceInteractionInfo
+}

@@ -3,7 +3,7 @@
 const StatusLabel = ({ status }: { status: string }) => {
 
   return (
-    <div>{status}</div>
+    <div className="inline-block p-1 border rounded-sm">{status}</div>
   )
 }
 
