@@ -1,13 +1,4 @@
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "./components/ui/drawer"
+
 import { createContext, useState } from "react";
 
 import Substances from "./components/Substances";
@@ -29,21 +20,6 @@ const App = () => {
       </small>
       <div>
         <Toaster richColors />
-        <Drawer shouldScaleBackground>
-          <DrawerTrigger>Open</DrawerTrigger>
-          <DrawerContent>
-            <DrawerHeader>
-              <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-              <DrawerDescription>This action cannot be undone.</DrawerDescription>
-            </DrawerHeader>
-            <DrawerFooter>
-              <button>Submit</button>
-              <DrawerClose>
-                X
-              </DrawerClose>
-            </DrawerFooter>
-          </DrawerContent>
-        </Drawer>
       </div>
     </div>
   );
